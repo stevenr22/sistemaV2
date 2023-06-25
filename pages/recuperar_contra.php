@@ -111,7 +111,7 @@ $db->close();
 <body>
 <div class="container">
 
-    <div id="card_recuperar" class="card col-lg-3">
+    <div class="card col-lg-3">
         <div class="header">
             <img src="../img/usuario.png">
             <h1><b>Cambiar contraseña</b></h1>
