@@ -6,45 +6,37 @@ session_start();
 $usu = $_POST["Nusu"];
 $contra = $_POST["Ncontra"];
 
-$band = false;
+
 //FALTA REALIZAR EL LOGIN CON LOS RESPECTIVOS ROLES
 $sentencia = "select * from usuario where nomb_usu='$usu' and contra='$contra'";
 $respuesta = $db->query($sentencia);
-while($fila = $respuesta->fetch_array()){
-    $_SESSION['DBid'] = $fila['id_usuario'];
-    $_SESSION['DBnombusu'] = $fila['nomb_usuario'];
- 
-    $band = true;
-}
+$fila = mysqli_fetch_array($respuesta);
+if($fila['id_cargo']==1){ //administrados
+    $_SESSION['DBid_usuario'] = $fila['id'];
+    $_SESSION['DBnombusu'] = $fila['nomb_usu'];
 
-if ($band) header("location:index.php"); //SI TODO ESTA BIEN VAL DASHBOARD
-elseif(empty($usu) || empty($contra)){ //PERMITE VERIFICAR SI LOS CAMPOS ESTAN VACIOS
+
+    header("location:index.php");
+
+}else
+if($fila['id_cargo']==2){ //gerente
+    $_SESSION['DBid_usuario'] = $fila['id'];
+    $_SESSION['DBnombusu'] = $fila['nomb_usu'];
+    header("location:index2.php");
+}else{
     ?>
     <?php
     include("../pages/login.html");
     ?>
     <script>
         Swal.fire({
-        title: "CAMPOS VACIOS!",
-        icon: 'warning'
-    })
-    </script>
-    
-    <?php
-
-}else{ //VERIFICA SI LOS DATOS ESTAN INCORRECTOS
-    ?>
-    <?php
-    include("../pages/login.html");
-    ?>
-    <script>
-        Swal.fire({
-        title: "DATOS INCORRECTOS!",
+        title: "ERROR DE AUTENTIFICACIÓN!",
         icon: 'error'
     })
     </script>
     
     <?php
 }
-
+mysqli_free_result($respuesta);
+mysqli_close($db);
 ?>
