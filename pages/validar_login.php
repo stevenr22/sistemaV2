@@ -22,7 +22,7 @@ if ($band) header("location:index.php"); //SI TODO ESTA BIEN VAL DASHBOARD
 elseif(empty($usu) || empty($contra)){ //PERMITE VERIFICAR SI LOS CAMPOS ESTAN VACIOS
     ?>
     <?php
-    include("../pages/login.php");
+    include("../pages/login.html");
     ?>
     <script>
         Swal.fire({
@@ -36,7 +36,7 @@ elseif(empty($usu) || empty($contra)){ //PERMITE VERIFICAR SI LOS CAMPOS ESTAN V
 }else{ //VERIFICA SI LOS DATOS ESTAN INCORRECTOS
     ?>
     <?php
-    include("../pages/login.php");
+    include("../pages/login.html");
     ?>
     <script>
         Swal.fire({
