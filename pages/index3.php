@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,12 +10,12 @@
 <body class="sb-nav-fixed">
     <?php include("../pages/partes/menu.php");?>
     <div id="layoutSidenav">
-        <?php include("../pages/partes/pagAdmin.php");?>
+        <?php include("../pages/partes/pagJorna.php");?>
 
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">BIENVENIDO, ADMINISTRADOR.</h1>
+                        <h1 class="mt-4">BIENVENIDO, JORNALERO.</h1>
                        
                    
                         <div class="row">

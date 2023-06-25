@@ -11,7 +11,7 @@ $contra = $_POST["Ncontra"];
 $sentencia = "select * from usuario where nomb_usu='$usu' and contra='$contra'";
 $respuesta = $db->query($sentencia);
 $fila = mysqli_fetch_array($respuesta);
-if($fila['id_cargo']==1){ //administrados
+if($fila['id_cargo']==1){ //administrador
     $_SESSION['DBid_usuario'] = $fila['id'];
     $_SESSION['DBnombusu'] = $fila['nomb_usu'];
 
@@ -23,6 +23,11 @@ if($fila['id_cargo']==2){ //gerente
     $_SESSION['DBid_usuario'] = $fila['id'];
     $_SESSION['DBnombusu'] = $fila['nomb_usu'];
     header("location:index2.php");
+}else
+if($fila['id_cargo']==3){ //gerente
+    $_SESSION['DBid_usuario'] = $fila['id'];
+    $_SESSION['DBnombusu'] = $fila['nomb_usu'];
+    header("location:index3.php");
 }else{
     ?>
     <?php
