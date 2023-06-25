@@ -1,7 +1,4 @@
-<?php
-session_start();
-if(isset($_SESSION['DBid'])==false) header("location:../index.php");
-?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -15,13 +12,6 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
     <?php include("../pages/partes/menu.php");?>
     <div id="layoutSidenav">
         <?php include("../pages/partes/pag.php");?>
-
-
-
-
-
-
-
 
             <div id="layoutSidenav_content">
                 <main>

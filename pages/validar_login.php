@@ -1,6 +1,7 @@
 <?php
-session_start();
+
 include("../bd/conexion.php");
+session_start();
 
 $usu = $_POST["Nusu"];
 $contra = $_POST["Ncontra"];
@@ -12,8 +13,6 @@ $respuesta = $db->query($sentencia);
 while($fila = $respuesta->fetch_array()){
     $_SESSION['DBid'] = $fila['id_usuario'];
     $_SESSION['DBnombusu'] = $fila['nomb_usuario'];
-    $_SESSION['DBnombre'] = $fila['nombre'];
-    $_SESSION['DBapellido'] = $fila['apellido'];
  
     $band = true;
 }
