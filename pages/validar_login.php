@@ -8,7 +8,7 @@ $contra = $_POST["Ncontra"];
 
 $band = false;
 //FALTA REALIZAR EL LOGIN CON LOS RESPECTIVOS ROLES
-$sentencia = "select * from usuario where nomb_usuario='$usu' and contraseña='$contra'";
+$sentencia = "select * from usuario where nomb_usu='$usu' and contra='$contra'";
 $respuesta = $db->query($sentencia);
 while($fila = $respuesta->fetch_array()){
     $_SESSION['DBid'] = $fila['id_usuario'];
