@@ -1,48 +1,51 @@
-<?php
-// Se utiliza para llamar al archivo que contine la conexion a la base de datos
+<?php 
 include("../bd/conexion.php");
 
-// Validamos que el formulario y que el boton registro haya sido presionado
-if(isset($_POST['btnregistro'])) {
-
-// Obtener los valores enviados por el formulario
-$usu = $_POST['Nusu'];
-$contra = $_POST['Ncontra'];
-//VALIDAR CAMPOS VACIOS
-if (empty($usu) || empty($contra)) {
-    ?>
-    <?php
-    include("registro.html");
-    ?>
-    <script>
-        Swal.fire({
-        title: "CAMPOS VACIOS!",
-        icon: 'warning'
-    })
-    </script>
-    
-    <?php
-}else{
-
-    // Insertamos los datos en la base de datos
-    $sql = "INSERT INTO usuario (nomb_usuario, contraseña) 
-    VALUES ('$usu', '$contra')";
-    $resultado =  mysqli_query($db,$sql);
-    if($resultado) {
-        // Inserción correcta
-        ?>
-        <?php
-        include("registro.html");
-        ?>
-        <script>
-            Swal.fire({
-            title: "DATOS REGISTRADOS CORRECTAMENTE!",
-            icon: 'success'
-        })
-        </script>
-            
-        <?php
-        }
+if (isset($_POST['btnregistro'])) {
+    if (strlen($_POST['Nusu']) >= 1 && strlen($_POST['Ncontra']) >= 1) {
+	    $usu = trim($_POST['Nusu']);
+	    $contra = trim($_POST['Ncontra']);
+	
+	    $consulta = "INSERT INTO usuario(nomb_usuario, contraseña) VALUES ('$usu','$contra')";
+	    $resultado = mysqli_query($db,$consulta);
+        if ($resultado) {
+            ?>
+            <?php
+            include("../pages/registro.php");
+            ?>
+            <script>
+                Swal.fire({
+                title: "REGISTRO COMPLETADO!",
+                icon: 'success'
+            })
+            </script>
+            <?php
+	    } else {
+            ?>
+            <?php
+            include("../pages/registro.php");
+            ?>
+            <script>
+                Swal.fire({
+                title: "ERROR AL REGISTRARSE!",
+                icon: 'error'
+            })
+            </script>
+            <?php
+	    	
+	    }
+    }else {
+	    ?>
+            <?php
+            include("../pages/registro.php");
+            ?>
+            <script>
+                Swal.fire({
+                title: "COMPLETE LOS CAMPOS!",
+                icon: 'warning'
+            })
+            </script>
+            <?php
     }
 }
 

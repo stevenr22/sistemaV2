@@ -3,12 +3,11 @@ session_start();
 if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <?php include("../pages/partes/heads.php");?>
 </head>
 <body>
-
     <?php include("../pages/partes/menu.php");?>
     <div id="layoutSidenav">
             <?php include("../pages/partes/pag.php");?>

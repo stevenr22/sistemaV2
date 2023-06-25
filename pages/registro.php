@@ -24,6 +24,7 @@
             <div class="header">
                 <img src="../img/usuario.png">
                 <h1><b>Registrar datos</b></h1>
+                
             </div><br>
            
             <form method="post" action="validar_registro.php">
@@ -49,12 +50,11 @@
                 
                 <button type="submit" name="btnregistro" class="btn btn-success mb-2">Registrar</button>
                 
-                
-            
                 <a id="efecto" href="../pages/login.html">
                     <b>Tiene cuenta? Inicia</b>
                 </a>
             </form>
+            
 
         </div>
     </div>
