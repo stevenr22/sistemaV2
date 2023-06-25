@@ -151,9 +151,13 @@ $db->close();
                     </button>
                 </div>
                 <input id="contraseña3" name="confirm_password" class="form-control" type="password" placeholder="Ingrese su contraseña actual">
-            </div>
+            </div><br>
         
             <button type="submit" class="btn btn-success"name="submit">Cambiar contraseña</button>
+            <br>
+            <a id="efecto" href="login.html">
+                    <b>Cancelar - ir a iniciar sesión</b>
+            </a>
 
         </form>
     </div>
