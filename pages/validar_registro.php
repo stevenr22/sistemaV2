@@ -1,8 +1,7 @@
 <?php
 // Se utiliza para llamar al archivo que contine la conexion a la base de datos
 include("../bd/conexion.php");
-$db = DataBase::connect();
-date_default_timezone_set("America/Guayaquil");
+
 // Validamos que el formulario y que el boton registro haya sido presionado
 if(isset($_POST['btnregistro'])) {
 
