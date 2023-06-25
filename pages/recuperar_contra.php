@@ -15,7 +15,19 @@ if (isset($_POST['submit'])) {
 
     // Verificar que la nueva contraseña y la confirmación coincidan
     if ($newPassword !== $confirmPassword) {
-        echo "La nueva contraseña y la confirmación no coinciden.";
+    
+        ?>
+        <?php
+        include("login.html");
+        ?>
+        <script>
+            Swal.fire({
+            title: "La nueva contraseña y la confirmación no coinciden!",
+            icon: 'warning'
+        })
+        </script>
+        
+        <?php
     } else {
         // Verificar que la contraseña actual sea correcta para el usuario y su rol
         $sql = "select * from usuario where nomb_usu = '$userId' and contra = '$currentPassword'";
@@ -44,7 +56,20 @@ if (isset($_POST['submit'])) {
                 
                 <?php
             } else {
-                echo "Error al cambiar la contraseña: " . $db->error;
+            
+                ?>
+                <?php
+                include("login.html");
+                ?>
+                <script>
+                    Swal.fire({
+                    title: "Error al cambiar la contraseña!"<?php $db->error;?>,
+                    icon: 'error'
+                })
+                </script>
+                
+                <?php
+               
             }
         } else {
             ?>
