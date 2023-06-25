@@ -8,7 +8,7 @@
 
 
 <body class="sb-nav-fixed">
-    <?php include("../pages/partes/menu.php");?>
+    <?php include("../pages/partes/menuJorna.php");?>
     <div id="layoutSidenav">
         <?php include("../pages/partes/pagJorna.php");?>
 

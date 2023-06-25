@@ -10,7 +10,7 @@ $nombre=$_SESSION['DBnombusu'];
                     <?php echo $nombre?><i class="fas fa-user fa-fw"></i></a>
                     
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="../pages/perfil.php">Perfíl</a>
+                        <a class="dropdown-item" href="../pages/perfilJorna.php">Perfíl</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="../pages/cerrar_sesion.php">Salir</a>
                     </div>

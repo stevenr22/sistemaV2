@@ -5,9 +5,9 @@
     <?php include("../pages/partes/heads.php");?>
 </head>
 <body>
-    <?php include("../pages/partes/menu.php");?>
+    <?php include("../pages/partes/menuAdmin.php");?>
     <div id="layoutSidenav">
-            <?php include("../pages/partes/pag.php");?>
+            <?php include("../pages/partes/pagAdmin.php");?>
 
 
             <div id="layoutSidenav_content">
@@ -19,7 +19,7 @@
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="card mb-4">
-                                    <div class="card-header">DATOS EMPLEADOS</div>
+                                    <div class="card-header">ESTOS SON SUS DATOS, ADMINISTRADOR <?php echo $nombre?></div>
                                     <div class="card-body">
                                     <div class="panel panel-success">
                                 

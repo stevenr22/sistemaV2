@@ -9,7 +9,7 @@
 
 
 <body class="sb-nav-fixed">
-    <?php include("../pages/partes/menu.php");?>
+    <?php include("../pages/partes/menuGerente.php");?>
     <div id="layoutSidenav">
         <?php include("../pages/partes/pagGerente.php");?>
 

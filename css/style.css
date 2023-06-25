@@ -69,12 +69,3 @@
   cursor: pointer;
 }
 
-.alerta{
-  text-align: center;
-  color: red;
-}
-
-.success{
-  text-align: center;
-  color: rgb(43, 255, 0);
-}
